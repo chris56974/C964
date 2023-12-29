@@ -1,0 +1,1 @@
+../Resources/ratings.test.py

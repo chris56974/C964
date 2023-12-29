@@ -1,0 +1,12 @@
+('/Users/chris/wgu/C964T/imgs',
+ None,
+ [],
+ 'DATA',
+ [('kmeans.png', '/Users/chris/wgu/C964T/imgs/kmeans.png', 'DATA'),
+  ('mostRated.png', '/Users/chris/wgu/C964T/imgs/mostRated.png', 'DATA'),
+  ('userRatingsDistribution.png',
+   '/Users/chris/wgu/C964T/imgs/userRatingsDistribution.png',
+   'DATA'),
+  ('nondescriptive.png',
+   '/Users/chris/wgu/C964T/imgs/nondescriptive.png',
+   'DATA')])
