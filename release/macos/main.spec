@@ -3,8 +3,8 @@
 block_cipher = None
 from kivy.tools.packaging.pyinstaller_hooks import get_deps_all, hookspath, runtime_hooks
 
-a = Analysis(['/Users/chris/wgu/C964T/src/main.py'],
-             pathex=['/Users/chris/wgu/C964T'],
+a = Analysis(['/Users/chris/wgu/C964/src/main.py'],
+             pathex=['/Users/chris/wgu/C964'],
              cipher=block_cipher,
              hookspath=hookspath(),
              runtime_hooks=runtime_hooks(),
@@ -15,22 +15,20 @@ pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='C964T',
+          name='C964',
           debug=False,
           strip=False,
           upx=True,
           console=False )
 
 coll = COLLECT(exe, 
-               Tree('/Users/chris/wgu/C964T/src'),
-               Tree('/Users/chris/wgu/C964T/data'),
-               Tree('/Users/chris/wgu/C964T/imgs'),
+               Tree('/Users/chris/wgu/C964/src'),
                a.binaries,
                a.zipfiles,
                a.datas,
                strip=False,
                upx=True,
-               name='C964T')
+               name='C964')
 
 app = BUNDLE(coll,
              name='C964.app',

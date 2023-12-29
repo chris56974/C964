@@ -1,11 +1,10 @@
 import csv
 from pathlib import Path
 
-base_dir = Path(__file__).parent.parent
-data_dir = base_dir / "data"
+current_dir = Path(__file__).parent
 
-ratings_csv_path = data_dir / "ratings_small.csv"
-links_csv_path = data_dir / "links_small.csv"
+ratings_csv_path = current_dir / "ratings_small.csv"
+links_csv_path = current_dir / "links_small.csv"
 
 
 def build_movie_id_to_imdb_id_map():
@@ -47,6 +46,7 @@ def convert_movie_ids_to_imdb_ids(movie_ids):
     ]
 
     return imdb_ids
+
 
 def get_user_rated_imdb_ids(user_id):
     movie_ids = get_user_rated_movie_ids(user_id)

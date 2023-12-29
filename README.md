@@ -11,8 +11,8 @@ The user does not need python installed, the packaged apps have everything they 
 
 In your file explorer, navigate to these paths and run the .app/.exe to see the app running.
 
-- release/macos/dist/C964T/C964T
-- release/windows/dist/C964T/C964T
+- release/macos/dist/C964/C964
+- release/windows/dist/C964/C964
 
 However, it will be difficult to install this project locally.
 

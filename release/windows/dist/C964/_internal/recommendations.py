@@ -3,6 +3,7 @@ from ratings import convert_movie_ids_to_imdb_ids
 
 
 def get_recommended_movie_ids(user_id):
+
     model = get_model()
     trainset = model.trainset
 

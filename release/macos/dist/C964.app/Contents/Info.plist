@@ -5,7 +5,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>C964</string>
 	<key>CFBundleExecutable</key>
-	<string>C964T</string>
+	<string>C964</string>
 	<key>CFBundleIconFile</key>
 	<string>icon-windowed.icns</string>
 	<key>CFBundleIdentifier</key>

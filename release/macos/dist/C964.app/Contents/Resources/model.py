@@ -1,20 +1,13 @@
 from surprise import Dataset, Reader, SVD
-from pathlib import Path
 
 import pickle, os
 import logging
+from pathlib import Path
 
-src_dir = Path(__file__).parent
+current_dir = Path(__file__).parent
 
-model_path = src_dir / "model.pkl"
-
-base_dir = src_dir.parent
-
-# Path to the data directory
-data_dir = base_dir / "data"
-
-# Path to the ratings file
-ratings_csv = data_dir / "ratings_small.csv"
+model_path = current_dir / "model.pkl"
+ratings_csv = current_dir / "ratings_small.csv"
 
 # Basic configuration for logging
 logging.basicConfig(

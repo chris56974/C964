@@ -7,7 +7,8 @@ from kivy.uix.button import Button
 from kivy.uix.image import Image
 from kivy.uix.scrollview import ScrollView
 
-import webbrowser
+import webbrowser, sys
+from pathlib import Path
 
 from recommendations import get_recommended_movie_imdb_ids
 from ratings import get_user_rated_imdb_ids
@@ -73,7 +74,12 @@ class MovieRecommenderApp(App):
         prefix = "Rated - " if list_type == "rated" else "Recommended - "
         for movie in movies:
             label_text = f"{prefix}Click Me! IMDB ID {movie}"
-            movie_button = Button(text=label_text, size_hint_y=None, height=40, background_color=(1,0,1,1))
+            movie_button = Button(
+                text=label_text,
+                size_hint_y=None,
+                height=40,
+                background_color=(1, 0, 1, 1),
+            )
             movie_button.bind(on_press=lambda instance, x=movie: self.open_imdb_link(x))
             self.movies_layout.add_widget(movie_button)
 
@@ -88,6 +94,8 @@ class MovieRecommenderApp(App):
         user_id = self.user_id_input.text
         if user_id.isdigit():
             user_id = int(user_id)
+            if user_id > 671 or user_id < 1:
+                return
             recommendations = get_recommended_movie_imdb_ids(user_id)
             self.update_movie_list(recommendations, "recommended")
 
@@ -96,7 +104,15 @@ class MovieRecommenderApp(App):
         webbrowser.open(imdb_url)
 
     def show_image(self, img_name):
-        self.current_image.source = f"../imgs/{img_name}"
+        if getattr(sys, "frozen", False):
+            # The application is frozen (packaged)
+            base_path = Path(sys._MEIPASS)
+        else:
+            # The application is not frozen (development)
+            base_path = Path(__file__).parent
+
+        image_path = base_path / img_name
+        self.current_image.source = str(image_path)
 
 
 if __name__ == "__main__":
