@@ -11,8 +11,8 @@ The user does not need python installed, the packaged apps have everything they 
 
 In your file explorer, navigate to these paths and run the .app/.exe to see the app running.
 
-- release/macos
-- release/windows
+- release/macos/dist/C964T/C964T
+- release/windows/dist/C964T/C964T
 
 However, it will be difficult to install this project locally.
 
@@ -72,10 +72,6 @@ I think you can do something like this or fiddle around with it to make it work.
 python -m ipykernel install --user --name=project_env --display-name "Project Environment"
 ```
 
-# Kaggle Dataset 
+# E. Citation
 
-Courtesy of Rounak Banik 
-
-https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset
-
-License CC0: Public Domain
+Banik, R. (n.d.). The Movies Dataset. Kaggle. Retrieved 2023, from https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset
